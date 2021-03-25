@@ -18,13 +18,4 @@ class MessageTransformers {
                 .map(transformer)
                 .collect(Collectors.toList());
     }
-
-    private static <T> Function<Message, T> transformFunction(Function<Message, T> transformer) {
-        return new Function<Message, T>() {
-            @Override
-            public T apply(Message message) {
-                return transformer.apply(message);
-            }
-        };
-    }
 }
