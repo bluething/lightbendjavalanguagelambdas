@@ -6,11 +6,8 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 class MessageTransformers {
-    static MessageTransformer<String> toString = new MessageTransformer<String>() {
-        @Override
-        public String apply(Message message) {
-            return message.toString();
-        }
+    static MessageTransformer<String> toString = (Message message) -> {
+        return message.toString();
     };
 
     static MessageTransformer<Instant> toTimestamp = new MessageTransformer<Instant>() {
