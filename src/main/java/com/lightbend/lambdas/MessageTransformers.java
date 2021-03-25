@@ -15,7 +15,7 @@ class MessageTransformers {
     static <T> List<T> mapMessages(List<Message> messages, Function<Message, T> transformer) {
         return messages
                 .stream()
-                .map(message -> transformer.apply(message))
+                .map(transformer::apply)
                 .collect(Collectors.toList());
     }
 
