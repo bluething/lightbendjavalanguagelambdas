@@ -6,9 +6,9 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 class MessageTransformers {
-    static MessageTransformer<String> toString = message -> message.toString();
+    static MessageTransformer<String> toString = Message::toString;
 
-    static MessageTransformer<Instant> toTimestamp = message -> message.getTimestamp();
+    static MessageTransformer<Instant> toTimestamp = Message::getTimestamp;
 
     static MessageTransformer<Message> toUpperCase = message -> new Message(message.getId(), message.getTimestamp(), message.getContent().toUpperCase());;
 
